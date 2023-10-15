@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".ListingFragment">
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/buttons"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+
+    >
+    <ImageView
+        android:id="@+id/borrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/borrow"
+      />
+
+    <ImageView
+        android:id="@+id/heart"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="364dp"
+        android:src="@drawable/ic_baseline_favorite_border_24"
+        />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/job_position"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="20dp"
+        app:cardElevation="0dp"
+        android:layout_height="130dp"
+        >
+        <ImageView
+            android:id="@+id/canva"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/canva"
+            />
+
+        <TextView
+            android:id="@+id/job_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:text="@string/junior_ux_designer"
+            android:textSize="24sp"
+            />
+        <TextView
+            android:id="@+id/job_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:text="@string/canva"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:id="@+id/job_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
+            android:text="@string/date"
+            android:textSize="12sp"
+            />
+    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/job_detail_info"
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:layout_marginTop="5dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:text="apply before"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="51dp"
+            android:layout_marginStart="24dp"
+            android:text="03 June, 2022"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="206dp"
+            android:text="job nature"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="51dp"
+            android:layout_marginStart="182dp"
+            android:text="Full-time"
+            android:background="@drawable/shape"
+            android:textSize="12sp"
+            />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="junior_ux_designer">Junior UX Designer</string>
+    <string name="canva">Canva</string>
+    <string name="date">Posted on 3 March</string>
+</resources>

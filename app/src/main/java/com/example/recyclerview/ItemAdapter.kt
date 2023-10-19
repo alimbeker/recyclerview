@@ -8,20 +8,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.databinding.ItemDesignBinding
 
 
-class ItemAdapter() : ListAdapter<Item, ItemAdapter.ConnectionViewHolder>(connectionItemCallback) {
+class ItemAdapter() : ListAdapter<Item, ItemAdapter.JobViewHolder>(connectionItemCallback) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConnectionViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemDesignBinding.inflate(inflater, parent, false)
-        return ConnectionViewHolder(binding)
+        return JobViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ConnectionViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: JobViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
     }
 
-    class ConnectionViewHolder(private val binding: ItemDesignBinding) : RecyclerView.ViewHolder(binding.root) {
+    class JobViewHolder(private val binding: ItemDesignBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Item) {
             binding.jobTitle.text = item.title
@@ -45,3 +45,9 @@ class ItemAdapter() : ListAdapter<Item, ItemAdapter.ConnectionViewHolder>(connec
 enum class JobListType {
     NAME_VIEW, POSITION_VIEW
 }
+
+data class JobListDto(
+    val viewType: JobListType,
+    val name : String
+
+)

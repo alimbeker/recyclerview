@@ -12,4 +12,5 @@
     <color name="background_color">#BFDBD1</color>
     <color name="button_text_color">#CF135B46</color>
     <color name="button_color">#BFDBD1</color>
+    <color name="recycler_page_back">#BFDBD1</color>
 </resources>

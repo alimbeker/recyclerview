@@ -5,4 +5,20 @@
     <string name="junior_ux_designer">Junior UX Designer</string>
     <string name="canva">Canva</string>
     <string name="date">Posted on 3 March</string>
+    <string name="place">Work from anywhere</string>
+    <string name="job_location">job location</string>
+    <string name="salary">40k - 60k/yearly</string>
+    <string name="salary_range">salary range</string>
+    <string name="job_time">Full-time</string>
+    <string name="job_nature">job nature</string>
+    <string name="apply_date">03 June, 2022</string>
+    <string name="apply">apply before</string>
+    <string name="job_description">job description</string>
+    <string name="job_desc_text">Can you bring creative human-centered ideas to life and make great things happen beyond what meets the eye? We believe in teamwork, fun, complex projects, diverse perspectives, and simple solutions. How about you? We\'re looking for a like-minded</string>
+    <string name="roles">ROLES AND RESPONSIBILITIES</string>
+    <string name="roles_text">• Drive the design process with cross-functional partners and design leads.\n• Design new experiences and patterns in a complex ecosystem and across platforms.\n• Partner with UX Research and Content Strategists through the design process.\n• Work closely with Product and Engineering to ensure a high quality implementation.
+    </string>
+    <string name="splash_text1">SmartRecruiters candidate portal is now Smartr.</string>
+    <string name="splash_text2">Enter the same login info used for your SmartrProfile</string>
+    <string name="splash_text3">If login details were saved, you may need to re-save.</string>
 </resources>

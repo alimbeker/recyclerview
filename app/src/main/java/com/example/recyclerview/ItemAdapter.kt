@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.databinding.ItemDesignBinding
 
 
-class ItemAdapter : ListAdapter<Item, ItemAdapter.ConnectionViewHolder>(connectionItemCallback) {
+class ItemAdapter() : ListAdapter<Item, ItemAdapter.ConnectionViewHolder>(connectionItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConnectionViewHolder {
         val inflater = LayoutInflater.from(parent.context)

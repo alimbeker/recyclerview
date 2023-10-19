@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="20dp"
+    android:backgroundTint="@color/item_back"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/canva"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerCrop"
+
+            android:src="@drawable/canva"
+
+            >
+
+        </com.google.android.material.imageview.ShapeableImageView>
+
+        <TextView
+            android:id="@+id/job_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/junior_ux_designer"
+            android:textColor="@color/black"
+            android:layout_marginTop="17dp"
+            android:layout_marginStart="63dp"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/job_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="63dp"
+            android:text="@string/canva"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="63dp"
+            android:background="@drawable/shape"
+            android:text="@string/paystack"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/paystack"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="260dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="67dp"
+            android:text="@string/salary"
+            android:gravity="right"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

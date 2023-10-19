@@ -21,4 +21,5 @@
     <string name="splash_text1">SmartRecruiters candidate portal is now Smartr.</string>
     <string name="splash_text2">Enter the same login info used for your SmartrProfile</string>
     <string name="splash_text3">If login details were saved, you may need to re-save.</string>
+    <string name="paystack">Paystack</string>
 </resources>

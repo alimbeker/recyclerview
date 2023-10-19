@@ -41,3 +41,7 @@ class ItemAdapter() : ListAdapter<Item, ItemAdapter.ConnectionViewHolder>(connec
         }
     }
 }
+
+enum class JobListType {
+    NAME_VIEW, POSITION_VIEW
+}

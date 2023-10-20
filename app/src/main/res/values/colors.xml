@@ -16,4 +16,5 @@
     <color name="item_back">#FFFFFF</color>
     <color name="paystack">#53595F</color>
     <color name="header_text_color">#434545</color>
+    <color name="salary_color">#434545</color>
 </resources>

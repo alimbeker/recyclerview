@@ -64,14 +64,14 @@
             android:textSize="12sp" />
 
         <TextView
-            android:layout_width="260dp"
+            android:layout_width="259dp"
             android:layout_height="20dp"
-            android:layout_marginStart="105dp"
+            android:layout_marginStart="90dp"
             android:layout_marginTop="67dp"
             android:text="@string/salary"
             android:gravity="right"
-            android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/salary_color"
             android:textSize="12sp" />
     </FrameLayout>
 

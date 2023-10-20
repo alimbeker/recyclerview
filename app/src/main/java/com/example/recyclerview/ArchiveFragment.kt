@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerview.databinding.FragmentArchiveBinding
 import com.example.recyclerview.databinding.FragmentSplashScreenBinding
+import com.example.recyclerview.decoration.OffsetDecoration
 
 
 class ArchiveFragment : Fragment() {
@@ -42,7 +43,9 @@ class ArchiveFragment : Fragment() {
 
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         recyclerView.adapter = adapter
-        recyclerView.addItemDecoration()
+
+        val offsetDecoration = OffsetDecoration(start = 16, top = 16, end = 15)
+        recyclerView.addItemDecoration(offsetDecoration)
 
 
 

@@ -5,49 +5,69 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBinding
+import com.example.recyclerview.databinding.HeaderDesignBinding
 import com.example.recyclerview.databinding.ItemDesignBinding
 
 
-class ItemAdapter() : ListAdapter<Item, ItemAdapter.JobViewHolder>(connectionItemCallback) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemDesignBinding.inflate(inflater, parent, false)
-        return JobViewHolder(binding)
+class ItemAdapter(
+    private val items: List<CountryListDto>
+) : RecyclerView.Adapter<BaseCountryViewHolder<*, String>>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseCountryViewHolder<*, String> {
+        return if (viewType == JobListType.HEADER_VIEW.ordinal) {
+            HeaderViewHolder(
+                HeaderDesignBinding.inflate(
+                    LayoutInflater.from(parent.context), parent, false
+                )
+            )
+        } else JobViewHolder(
+            ItemDesignBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
     }
 
-    override fun onBindViewHolder(holder: JobViewHolder, position: Int) {
-        val item = getItem(position)
-        holder.bind(item)
+    override fun getItemCount(): Int = items.size
+
+    override fun onBindViewHolder(holder: BaseCountryViewHolder<*, String>, position: Int) {
+        holder.bindView(items[position].name)
     }
 
-    class JobViewHolder(private val binding: ItemDesignBinding) : RecyclerView.ViewHolder(binding.root) {
+    override fun getItemViewType(position: Int): Int {
+        return items[position].viewType.ordinal
+    }
 
-        fun bind(item: Item) {
-            binding.jobTitle.text = item.title
+    class JobViewHolder(override val binding: ItemDesignBinding) :
+        BaseCountryViewHolder<ItemDesignBinding, String>(binding) {
 
+        override fun bindView(item: String) {
+            binding.jobTitle.text = item
         }
     }
 
-    companion object {
-        private val connectionItemCallback = object : DiffUtil.ItemCallback<Item>() {
-            override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean {
-                return oldItem.id == newItem.id
-            }
+    class HeaderViewHolder(override val binding: HeaderDesignBinding) :
+        BaseCountryViewHolder<HeaderDesignBinding, String>(binding) {
 
-            override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean {
-                return oldItem == newItem
-            }
+        override fun bindView(item: String) {
+            binding.headerName.text = item
+
+
         }
     }
+}
+
+abstract class BaseCountryViewHolder<VB: ViewBinding, T>(protected open val binding: VB):
+    RecyclerView.ViewHolder(binding.root) {
+    abstract fun bindView(item: T)
 }
 
 enum class JobListType {
-    NAME_VIEW, POSITION_VIEW
+    HEADER_VIEW, JOB_VIEW
 }
 
-data class JobListDto(
+data class CountryListDto(
     val viewType: JobListType,
-    val name : String
-
+    val name: String
 )

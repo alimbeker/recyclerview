@@ -20,16 +20,31 @@ class ArchiveFragment : Fragment() {
         binding = FragmentArchiveBinding.inflate(inflater, container, false)
         val recyclerView = binding.recyclerView
 
+        val items = listOf(
+            CountryListDto(JobListType.HEADER_VIEW, "Designer"),
+            CountryListDto(JobListType.JOB_VIEW, "Junior UX Designer"),
+            CountryListDto(JobListType.JOB_VIEW, "Junior Product Designer"),
+            CountryListDto(JobListType.HEADER_VIEW, "Android"),
+            CountryListDto(JobListType.JOB_VIEW, "Junior Android Developer"),
+            CountryListDto(JobListType.JOB_VIEW, "Senior Android Developer"),
+            CountryListDto(JobListType.HEADER_VIEW, "IOS"),
+            CountryListDto(JobListType.JOB_VIEW, "Junior IOS Developer"),
+            CountryListDto(JobListType.JOB_VIEW, "Senior IOS Developer"),
+            CountryListDto(JobListType.HEADER_VIEW, "Backend developer"),
+            CountryListDto(JobListType.JOB_VIEW, "Junior Java Developer"),
+            CountryListDto(JobListType.JOB_VIEW, "Middle .NET Developer"),
+            CountryListDto(JobListType.HEADER_VIEW, "QA Engineer"),
+            CountryListDto(JobListType.JOB_VIEW, "Junior QA Engineer"),
+            CountryListDto(JobListType.JOB_VIEW, "Strong Junior QA Engineer")
 
-        val adapter = ItemAdapter()
+        )
+        val adapter = ItemAdapter(items)
+
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         recyclerView.adapter = adapter
-        val data = listOf(
-            Item(1, "Junior UX Designer"),
-            Item(2, "Junior Android Developer"),
-            Item(3, "Middle motion designer")
-        )
-        adapter.submitList(data)
+        recyclerView.addItemDecoration()
+
+
 
         return binding.root
     }

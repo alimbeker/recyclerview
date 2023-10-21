@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.example.recyclerview.databinding.FragmentArchiveBinding
 import com.example.recyclerview.databinding.FragmentSplashScreenBinding
+import com.example.recyclerview.decoration.HeaderDecoration
 import com.example.recyclerview.decoration.OffsetDecoration
 
 
@@ -48,8 +49,10 @@ class ArchiveFragment : Fragment() {
 
         adapter.submitList(items)
 
-        val offsetDecoration = OffsetDecoration(start = 16, top = 16, end = 15)
+        val offsetDecoration = OffsetDecoration(start = 16, top = 16, end = 15, bottom = 16)
+        val headerDecoration = HeaderDecoration()
         recyclerView.addItemDecoration(offsetDecoration)
+        recyclerView.addItemDecoration(headerDecoration)
 
 
 

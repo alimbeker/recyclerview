@@ -10,7 +10,7 @@
     android:textAllCaps="true"
     android:fontFamily="@font/poppins_semibold"
 
-    android:paddingBottom="16dp"
+
     >
 
 </TextView>

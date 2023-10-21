@@ -22,27 +22,29 @@ class ArchiveFragment : Fragment() {
         val recyclerView = binding.recyclerView
 
         val items = listOf(
-            CountryListDto(JobListType.HEADER_VIEW, "Designer"),
-            CountryListDto(JobListType.JOB_VIEW, "Junior UX Designer"),
-            CountryListDto(JobListType.JOB_VIEW, "Junior Product Designer"),
-            CountryListDto(JobListType.HEADER_VIEW, "Android"),
-            CountryListDto(JobListType.JOB_VIEW, "Junior Android Developer"),
-            CountryListDto(JobListType.JOB_VIEW, "Senior Android Developer"),
-            CountryListDto(JobListType.HEADER_VIEW, "IOS"),
-            CountryListDto(JobListType.JOB_VIEW, "Junior IOS Developer"),
-            CountryListDto(JobListType.JOB_VIEW, "Senior IOS Developer"),
-            CountryListDto(JobListType.HEADER_VIEW, "Backend developer"),
-            CountryListDto(JobListType.JOB_VIEW, "Junior Java Developer"),
-            CountryListDto(JobListType.JOB_VIEW, "Middle .NET Developer"),
-            CountryListDto(JobListType.HEADER_VIEW, "QA Engineer"),
-            CountryListDto(JobListType.JOB_VIEW, "Junior QA Engineer"),
-            CountryListDto(JobListType.JOB_VIEW, "Strong Junior QA Engineer")
+            JobListDto(1,JobListType.HEADER_VIEW, "Designer"),
+            JobListDto(2,JobListType.JOB_VIEW, "Junior UX Designer"),
+            JobListDto(3,JobListType.JOB_VIEW, "Junior Product Designer"),
+            JobListDto(4,JobListType.HEADER_VIEW, "Android"),
+            JobListDto(5,JobListType.JOB_VIEW, "Junior Android Developer"),
+            JobListDto(6,JobListType.JOB_VIEW, "Senior Android Developer"),
+            JobListDto(7,JobListType.HEADER_VIEW, "IOS"),
+            JobListDto(8,JobListType.JOB_VIEW, "Junior IOS Developer"),
+            JobListDto(9,JobListType.JOB_VIEW, "Senior IOS Developer"),
+            JobListDto(10,JobListType.HEADER_VIEW, "Backend developer"),
+            JobListDto(11,JobListType.JOB_VIEW, "Junior Java Developer"),
+            JobListDto(12,JobListType.JOB_VIEW, "Middle .NET Developer"),
+            JobListDto(13,JobListType.HEADER_VIEW, "QA Engineer"),
+            JobListDto(14,JobListType.JOB_VIEW, "Junior QA Engineer"),
+            JobListDto(15,JobListType.JOB_VIEW, "Strong Junior QA Engineer")
 
         )
-        val adapter = ItemAdapter(items)
+        val adapter = ItemListAdapter()
 
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         recyclerView.adapter = adapter
+
+        adapter.submitList(items)
 
         val offsetDecoration = OffsetDecoration(start = 16, top = 16, end = 15)
         recyclerView.addItemDecoration(offsetDecoration)

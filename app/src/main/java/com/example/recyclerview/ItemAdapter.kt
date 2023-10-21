@@ -15,6 +15,8 @@ class ItemAdapter(
     private val items: List<CountryListDto>
 ) : RecyclerView.Adapter<BaseCountryViewHolder<*, String>>() {
 
+    val itemClick: ((CountryListDto) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseCountryViewHolder<*, String> {
         return if (viewType == JobListType.HEADER_VIEW.ordinal) {
             HeaderViewHolder(
@@ -25,7 +27,7 @@ class ItemAdapter(
         } else JobViewHolder(
             ItemDesignBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
-            )
+            ), itemClick
         )
     }
 
@@ -39,12 +41,16 @@ class ItemAdapter(
         return items[position].viewType.ordinal
     }
 
-    class JobViewHolder(override val binding: ItemDesignBinding) :
+    class JobViewHolder(override val binding: ItemDesignBinding, private val itemClick: ((CountryListDto) -> Unit)?) :
         BaseCountryViewHolder<ItemDesignBinding, String>(binding) {
 
         override fun bindView(item: String) {
             binding.jobTitle.text = item
+
+
         }
+
+
     }
 
     class HeaderViewHolder(override val binding: HeaderDesignBinding) :

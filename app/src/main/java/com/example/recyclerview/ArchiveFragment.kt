@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.example.recyclerview.databinding.FragmentArchiveBinding
@@ -42,6 +43,11 @@ class ArchiveFragment : Fragment() {
 
         )
         val adapter = ItemListAdapter(items)
+
+        adapter.itemClick = {
+            Toast.makeText(this.context, it,Toast.LENGTH_SHORT).show()
+        }
+
 
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         LinearSnapHelper().attachToRecyclerView(recyclerView)

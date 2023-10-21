@@ -16,7 +16,7 @@ class ItemListAdapter(private val items: List<JobListDto>) :
     ListAdapter<JobListDto, BaseJobViewHolder<*,String>>(ContinentDiffUtils()) {
 
 
-    val itemClick: ((String) -> Unit)? = null
+    var itemClick: ((String) -> Unit)? = null
 
     class ContinentDiffUtils : DiffUtil.ItemCallback<JobListDto>() {
         override fun areItemsTheSame(oldItem: JobListDto, newItem: JobListDto): Boolean {

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import com.example.recyclerview.databinding.FragmentArchiveBinding
 import com.example.recyclerview.databinding.FragmentSplashScreenBinding
 import com.example.recyclerview.decoration.OffsetDecoration
@@ -42,6 +43,7 @@ class ArchiveFragment : Fragment() {
         val adapter = ItemListAdapter(items)
 
         recyclerView.layoutManager = LinearLayoutManager(this.context)
+        LinearSnapHelper().attachToRecyclerView(recyclerView)
         recyclerView.adapter = adapter
 
         adapter.submitList(items)

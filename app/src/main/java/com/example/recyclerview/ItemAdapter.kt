@@ -17,6 +17,7 @@ class ItemAdapter(
 
     val itemClick: ((CountryListDto) -> Unit)? = null
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseCountryViewHolder<*, String> {
         return if (viewType == JobListType.HEADER_VIEW.ordinal) {
             HeaderViewHolder(

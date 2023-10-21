@@ -18,5 +18,17 @@
         android:id="@+id/archiveFragment"
         android:name="com.example.recyclerview.ArchiveFragment"
         android:label="fragment_archive"
-        tools:layout="@layout/fragment_archive" />
+        tools:layout="@layout/fragment_archive" >
+        <action
+            android:id="@+id/action_archiveFragment_to_listingFragment"
+            app:destination="@id/listingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listingFragment"
+        android:name="com.example.recyclerview.ListingFragment"
+        android:label="fragment_listing"
+        tools:layout="@layout/fragment_listing" />
+
+
 </navigation>
+

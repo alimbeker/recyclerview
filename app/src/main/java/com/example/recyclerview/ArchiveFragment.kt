@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.example.recyclerview.databinding.FragmentArchiveBinding
@@ -45,7 +48,7 @@ class ArchiveFragment : Fragment() {
         val adapter = ItemListAdapter(items)
 
         adapter.itemClick = {
-            Toast.makeText(this.context, it,Toast.LENGTH_SHORT).show()
+           findNavController(this).navigate(R.id.action_archiveFragment_to_listingFragment)
         }
 
 

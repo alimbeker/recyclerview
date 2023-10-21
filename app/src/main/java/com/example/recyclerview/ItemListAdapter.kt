@@ -13,7 +13,7 @@ import com.example.recyclerview.databinding.ItemDesignBinding
 
 
 class ItemListAdapter(private val items: List<JobListDto>) :
-    ListAdapter<JobListDto, BaseCountryViewHolder<*,String>>(ContinentDiffUtils()) {
+    ListAdapter<JobListDto, BaseJobViewHolder<*,String>>(ContinentDiffUtils()) {
 
     class ContinentDiffUtils : DiffUtil.ItemCallback<JobListDto>() {
         override fun areItemsTheSame(oldItem: JobListDto, newItem: JobListDto): Boolean {
@@ -26,7 +26,7 @@ class ItemListAdapter(private val items: List<JobListDto>) :
     }
 
     class JobViewHolder(override val binding: ItemDesignBinding) :
-        BaseCountryViewHolder<ItemDesignBinding, String>(binding) {
+        BaseJobViewHolder<ItemDesignBinding, String>(binding) {
 
         override fun bindView(item: String) {
             binding.jobTitle.text = item
@@ -38,7 +38,7 @@ class ItemListAdapter(private val items: List<JobListDto>) :
     }
 
     class HeaderViewHolder(override val binding: HeaderDesignBinding) :
-        BaseCountryViewHolder<HeaderDesignBinding, String>(binding) {
+        BaseJobViewHolder<HeaderDesignBinding, String>(binding) {
 
         override fun bindView(item: String) {
             binding.headerName.text = item
@@ -47,7 +47,7 @@ class ItemListAdapter(private val items: List<JobListDto>) :
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseCountryViewHolder<*, String> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseJobViewHolder<*, String> {
         return if (viewType == JobListType.HEADER_VIEW.ordinal) {
             HeaderViewHolder(
                 HeaderDesignBinding.inflate(
@@ -63,12 +63,12 @@ class ItemListAdapter(private val items: List<JobListDto>) :
     override fun getItemViewType(position: Int): Int {
                 return items[position].viewType.ordinal
     }
-    override fun onBindViewHolder(holder: BaseCountryViewHolder<*, String>, position: Int) {
+    override fun onBindViewHolder(holder: BaseJobViewHolder<*, String>, position: Int) {
         holder.bindView(items[position].name)
     }
 }
 
-abstract class BaseCountryViewHolder<VB: ViewBinding, T>(protected open val binding: VB):
+abstract class BaseJobViewHolder<VB: ViewBinding, T>(protected open val binding: VB):
     RecyclerView.ViewHolder(binding.root) {
     abstract fun bindView(item: T)
 }

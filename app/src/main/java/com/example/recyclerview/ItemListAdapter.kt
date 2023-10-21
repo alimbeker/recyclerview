@@ -15,6 +15,9 @@ import com.example.recyclerview.databinding.ItemDesignBinding
 class ItemListAdapter(private val items: List<JobListDto>) :
     ListAdapter<JobListDto, BaseJobViewHolder<*,String>>(ContinentDiffUtils()) {
 
+
+    val itemClick: ((String) -> Unit)? = null
+
     class ContinentDiffUtils : DiffUtil.ItemCallback<JobListDto>() {
         override fun areItemsTheSame(oldItem: JobListDto, newItem: JobListDto): Boolean {
             return oldItem.id == newItem.id
@@ -25,12 +28,15 @@ class ItemListAdapter(private val items: List<JobListDto>) :
         }
     }
 
-    class JobViewHolder(override val binding: ItemDesignBinding) :
+    class JobViewHolder(override val binding: ItemDesignBinding, val itemClick: ((String) -> Unit)?) :
         BaseJobViewHolder<ItemDesignBinding, String>(binding) {
 
         override fun bindView(item: String) {
             binding.jobTitle.text = item
 
+            itemView.setOnClickListener {
+                itemClick?.invoke(item)
+            }
 
         }
 
@@ -56,8 +62,8 @@ class ItemListAdapter(private val items: List<JobListDto>) :
             )
         } else JobViewHolder(
             ItemDesignBinding.inflate(
-                LayoutInflater.from(parent.context), parent, false
-            )
+                LayoutInflater.from(parent.context), parent, false,
+            ),  itemClick
         )
     }
     override fun getItemViewType(position: Int): Int {

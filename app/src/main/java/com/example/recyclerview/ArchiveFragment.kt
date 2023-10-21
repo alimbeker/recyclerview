@@ -39,7 +39,7 @@ class ArchiveFragment : Fragment() {
             JobListDto(15,JobListType.JOB_VIEW, "Strong Junior QA Engineer")
 
         )
-        val adapter = ItemListAdapter()
+        val adapter = ItemListAdapter(items)
 
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         recyclerView.adapter = adapter

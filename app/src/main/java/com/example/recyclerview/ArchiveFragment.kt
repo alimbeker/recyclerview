@@ -53,17 +53,23 @@ class ArchiveFragment : Fragment() {
 
 
         recyclerView.layoutManager = LinearLayoutManager(this.context)
+
+
+
         LinearSnapHelper().attachToRecyclerView(recyclerView)
         recyclerView.adapter = adapter
 
         adapter.submitList(items)
+
 
         val offsetDecoration = OffsetDecoration(start = 16, top = 16, end = 15, bottom = 16)
         val headerDecoration = HeaderDecoration()
         recyclerView.addItemDecoration(offsetDecoration)
         recyclerView.addItemDecoration(headerDecoration)
 
-
+        recyclerView.swipeToLike {
+            Toast.makeText(this.context, items[it].name, Toast.LENGTH_SHORT).show()
+        }
 
         return binding.root
     }

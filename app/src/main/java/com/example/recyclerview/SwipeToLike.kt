@@ -1,18 +1,19 @@
 package com.example.recyclerview
 
+import com.example.recyclerview.decoration.dp
+
+
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
-import android.graphics.Color.red
+import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
-import android.os.Build
-import android.os.VibrationEffect
 import android.os.Vibrator
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recyclerview.decoration.dp
+
 
 
 fun RecyclerView.swipeToLike(likeAction: (Int) -> Unit) {
@@ -31,7 +32,6 @@ fun RecyclerView.swipeToLike(likeAction: (Int) -> Unit) {
 
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
             if (viewHolder is ItemListAdapter.JobViewHolder) {
-
                 likeAction.invoke(viewHolder.adapterPosition)
             }
         }
@@ -45,15 +45,13 @@ fun RecyclerView.swipeToLike(likeAction: (Int) -> Unit) {
             actionState: Int,
             isCurrentlyActive: Boolean
         ) {
-            if (viewHolder is ItemListAdapter.JobViewHolder &&
-                actionState == ItemTouchHelper.ACTION_STATE_SWIPE
-            ) {
+            if (viewHolder is ItemListAdapter.JobViewHolder && actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
                 with(viewHolder.itemView) {
                     val paint = Paint(Paint.ANTI_ALIAS_FLAG)
                     val scrollOffset = (-dX).toInt()
 
                     if (scrollOffset > 10) {
-                        paint.color = ContextCompat.getColor(context, R.color.red)
+                        paint.color = ContextCompat.getColor(context, android.R.color.holo_red_light)
                         val back = RectF(
                             right.toFloat() - rectangleLength,
                             top.toFloat(),
@@ -87,7 +85,7 @@ fun RecyclerView.swipeToLike(likeAction: (Int) -> Unit) {
                 }
             }
         }
-
     }).attachToRecyclerView(this)
 }
+
 

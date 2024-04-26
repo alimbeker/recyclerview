@@ -2,14 +2,11 @@ package com.example.recyclerview
 
 import com.example.recyclerview.decoration.dp
 
-
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
-import android.os.Vibrator
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +17,8 @@ fun RecyclerView.swipeToLike(likeAction: (Int) -> Unit) {
     ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.START) {
         val rectangleLength = 97.dp
         val maxScroll = 80.dp
-        val image = BitmapFactory.decodeResource(resources, R.drawable.ic_baseline_favorite_24)
+        val image = BitmapFactory.decodeResource(resources, R.drawable.like)
+            ?: throw IllegalArgumentException("Failed to load image resource")
 
         override fun onMove(
             recyclerView: RecyclerView,
@@ -73,7 +71,7 @@ fun RecyclerView.swipeToLike(likeAction: (Int) -> Unit) {
                         )
                     }
 
-                    if (scrollOffset > 50.dp) {
+                    if (scrollOffset > 250.dp) {
                         val iconRect = RectF(
                             right.toFloat() - 50.dp,
                             top.toFloat() + 28.dp,

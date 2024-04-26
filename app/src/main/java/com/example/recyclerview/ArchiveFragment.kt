@@ -27,7 +27,7 @@ class ArchiveFragment : Fragment() {
         binding = FragmentArchiveBinding.inflate(inflater, container, false)
         val recyclerView = binding.recyclerView
 
-        val items = listOf(
+        val items = mutableListOf(
             JobListDto(1,JobListType.HEADER_VIEW, "Designer"),
             JobListDto(2,JobListType.JOB_VIEW, "Junior UX Designer"),
             JobListDto(3,JobListType.JOB_VIEW, "Junior Product Designer"),
@@ -43,8 +43,8 @@ class ArchiveFragment : Fragment() {
             JobListDto(13,JobListType.HEADER_VIEW, "QA Engineer"),
             JobListDto(14,JobListType.JOB_VIEW, "Junior QA Engineer"),
             JobListDto(15,JobListType.JOB_VIEW, "Strong Junior QA Engineer")
-
         )
+
         val adapter = ItemListAdapter(items)
 
         adapter.itemClick = {
